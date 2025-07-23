@@ -12,7 +12,7 @@ dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection --version
 dotnet user-secrect init
 
 dotnet user-secrets set "UserId" "sa"
-dotnet user-secrets set "Password" "Aron1234"
+dotnet user-secrets set "Password" "Aron1234!"
 
 Obs: In Program.cs it will be like this:
 sqlConBuilder.ConnectionString = builder.Configuration.GetConnectionString("SQLDbConnection");
@@ -32,6 +32,11 @@ Check if the container is running:
 docker ps 
 ```
 
+EntityFramework
+```
+dotnet ef migrations add initialMigration
+dotnet ef database update
+```
 
 #
 ##
