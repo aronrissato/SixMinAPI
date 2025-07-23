@@ -12,22 +12,22 @@ public class CommandRepo : ICommandRepo
         _context = context;
     }
 
-    public async Task SaveChanges()
+    public async Task SaveChangesAsync()
     {
         await _context.SaveChangesAsync();
     }
 
-    public async Task<Command?> GetCommandById(int id)
+    public async Task<Command?> GetCommandByIdAsync(int id)
     {
         return await _context.Commands.FirstOrDefaultAsync(c => c.Id == id);
     }
 
-    public async Task<IEnumerable<Command>> GetAllCommands()
+    public async Task<IEnumerable<Command>> GetAllCommandsAsync()
     {
         return await _context.Commands.ToListAsync();
     }
 
-    public async Task CreateCommand(Command command)
+    public async Task CreateCommandAsync(Command command)
     {
         if (command == null)
         {
